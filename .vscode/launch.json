@@ -6,7 +6,14 @@
       "request": "launch",
       "name": "Launch Chrome against localhost",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/chromium-browser",
+      "runtimeArgs": [
+        "--new-window",
+        "-user-data-dir=/${workspaceFolder}/DevProfile",
+        "--remote-debugging-port=9222",
+        "--disable-background-networking"
+      ]
     }
   ]
 }

@@ -7,9 +7,11 @@ const Profile = () => {
   const [token, setToken] = useState<string>('');
 
   useEffect(() => {
-    getAccessTokenSilently().then((t) => {
-      setToken(t);
-    });
+    if (isAuthenticated) {
+      getAccessTokenSilently().then((t) => {
+        setToken(t);
+      });
+    }
   }, [isAuthenticated, getAccessTokenSilently]);
 
   if (isLoading) {
